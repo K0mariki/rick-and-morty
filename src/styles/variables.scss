@@ -1,0 +1,28 @@
+:root {
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(33, 33, 33, 1);
+  --color-tr-black: rgba(0, 0, 0, 0.87);
+  --color-grey: rgba(0, 0, 0, 0.5);
+  --color-primary-500: rgba(33, 150, 243, 1);
+  --color-primary-50: rgba(227, 242, 253, 1);
+  --color-basic: rgba(8, 31, 50, 1);
+  --color-sub-basic: rgba(92, 110, 140, 1);
+
+  --border: 1px solid var(--color-grey);
+
+  --border-radius-sm: 4px;
+  --border-radius-m: 8px;
+
+  --box-shadow-layout: box-shadow: -2px 0 8px 2px rgba(0, 0, 0, 0.1);
+  --box-shadow-sm: box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --box-shadow-m: box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+  --font-family-base: "Roboto", sans-serif;
+
+  --container-width: 1024px;
+  --container-padding-x: 24px;
+
+  --section-padding-y: #{fluid(40, 30)};
+
+  --transition-duration: 0.2s;
+}
