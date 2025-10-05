@@ -1,15 +1,71 @@
+@use "./helpers" as *;
+
 html {
-    &.is-lock {
-        overflow: hidden;
-    }
+  &.is-lock {
+    overflow: hidden;
+  }
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-family-base);
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  
+  font-family: var(--font-family-base);
+  color: var(--color-grey);
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+h1,
+.h1 {
+  @include fluid-text(48, 32);
+  color: var(--color-basic);
+}
+
+h2,
+.h2 {
+  @include fluid-text(36, 32);
+  color: var(--color-basic);
+}
+
+h3,
+.h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-grey);
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-basic);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: var(--color-black);
+
+  @include hover {
+    color: var(--color-primary-500);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  @include focus-visible;
 }
