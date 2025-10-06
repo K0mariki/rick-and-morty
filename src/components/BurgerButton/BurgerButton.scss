@@ -1,0 +1,42 @@
+@use "/src/styles/helpers" as *;
+
+.burger-button {
+  @include flex-center(true);
+  @include square(34px);
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    & .burger-button__line {
+      stroke: var(--color-primary-500);
+      transition: stroke var(--transition-duration);
+    }
+  }
+
+  &.active {
+    .burger-button__line {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+
+      &--2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+      }
+    }
+  }
+
+  &__line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 60 207;
+    transition: stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--2 {
+      stroke-dasharray: 60 60;
+    }
+  }
+}
