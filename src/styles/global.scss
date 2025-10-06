@@ -11,7 +11,7 @@ html {
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;  
+  min-height: 100vh;  
   font-family: var(--font-family-base);
   color: var(--color-grey);
 }
