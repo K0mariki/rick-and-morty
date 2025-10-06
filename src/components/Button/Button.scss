@@ -1,0 +1,30 @@
+@use "/src/styles/helpers" as *;
+
+.button {
+  padding: 10px 16px;
+  box-shadow: var(--box-shadow-sm);
+  background-color: var(--color-primary-50);
+  border-radius: var(--border-radius-sm);
+  border: none;
+  color: var(--color-primary-500);
+  text-align: center;
+
+  &--big {
+      padding: 16px 16px 14px;
+  }
+
+  &--inline {
+    display: inline-flex;
+    column-gap: 8px;
+  }
+
+  &--full-width {
+    position: relative;
+    width: 100%;
+
+    & .button__icon {
+      position: absolute;
+      left: 16px;
+    }
+  }
+}
