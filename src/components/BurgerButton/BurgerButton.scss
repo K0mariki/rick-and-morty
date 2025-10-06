@@ -10,7 +10,7 @@
   &:hover {
     & .burger-button__line {
       stroke: var(--color-primary-500);
-      transition: stroke var(--transition-duration);
+      transition: var(--transition-duration);
     }
   }
 

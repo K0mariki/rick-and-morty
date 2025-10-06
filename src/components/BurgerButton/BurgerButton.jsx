@@ -1,13 +1,14 @@
 import "./BurgerButton.scss";
 
 export default function BurgerButton(props) {
-  const { className } = props;
+  const { className, onClick } = props;
   return (
     <button
       className={`burger-button ${className ? className : ""}`}
       type="button"
       aria-label="Open menu"
       title="Open menu"
+      onClick={onClick}
     >
       <svg
         className="burger-button__svg"
