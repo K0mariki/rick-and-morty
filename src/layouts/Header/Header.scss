@@ -1,0 +1,73 @@
+@use "/src/styles/helpers" as *;
+
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-layout);
+  padding-block: 5px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+
+  &__overlay-menu-dialog {
+    @include square(100%);
+    padding: 5px 24px;
+    position: fixed;
+    inset: 0;
+    border: none;
+    transition-duration: var(--transition-duration);
+
+    @include mobile-above {
+      display: contents;
+    }
+
+    &[open] {
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    &:not([open]) {
+      opacity: 0;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      column-gap: 25px;
+
+      @include mobile {
+        margin-top: 48px;
+        flex-direction: column;
+        row-gap: 48px;
+        align-items: center;
+      }
+    }
+
+    &-link {
+      font-family: var(--font-family-second);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-black);
+
+      &.active {
+        color: var(--color-primary-500);
+      }
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__burger-button {
+    position: relative;
+  }
+}
