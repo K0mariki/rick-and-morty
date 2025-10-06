@@ -18,7 +18,7 @@ function App() {
         { path: "character/:characterId", element: <CharacterDetails /> },
         { path: "episodes", element: <Episodes /> },
         { path: "episode/:episodeId", element: <EpisodeDetails /> },
-        { path: "location", element: <Locations /> },
+        { path: "locations", element: <Locations /> },
         { path: "location/:locationId", element: <LocationDetails /> },
         { path: "*", element: <Characters /> },
       ],
