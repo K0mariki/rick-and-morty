@@ -5,7 +5,7 @@ export default function Logo(props) {
   const { className } = props;
   return (
     <Link
-      className={`logo ${className}`}
+      className={`logo ${className ? className : ""}`}
       to={"characters"}
       title="Characters"
       aria-label="Characters"
