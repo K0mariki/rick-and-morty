@@ -1,0 +1,14 @@
+.character-card {
+    box-shadow: var(--box-shadow-md);
+    height: 100%;
+    border-radius: var(--border-radius-sm);
+
+    &__body {
+        padding: 12px 16px;
+    }
+
+    &__image {
+        width: 100%;
+        background-color: var(--color-grey-light);
+    }
+}
