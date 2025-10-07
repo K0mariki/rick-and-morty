@@ -1,0 +1,19 @@
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+
+  &__input {
+    padding: 16px 14px 16px 48px;
+    width: 100%;
+    border: var(--border);
+    border-radius: var(--border-radius-md);
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+}
