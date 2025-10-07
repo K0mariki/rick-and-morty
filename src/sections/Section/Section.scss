@@ -1,0 +1,13 @@
+.section {
+    padding-block: var(--section-padding-y);
+
+    &__cards-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px 20px;
+
+        &-item .card{
+            height: 100%;
+        }
+    }
+}
