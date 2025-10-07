@@ -1,0 +1,24 @@
+.select {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+
+  &__menu-list {
+    padding: 16px 14px;
+    width: 100%;
+    border: var(--border);
+    border-radius: var(--border-radius-md);
+    appearance: none;
+    // color: var(--color-grey);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+// option {
+//   color: black;
+// }
