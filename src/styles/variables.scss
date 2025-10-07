@@ -1,3 +1,5 @@
+@use "./helpers" as *;
+
 :root {
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(33, 33, 33, 1);
@@ -23,7 +25,7 @@
   --container-width: 1024px;
   --container-padding-x: 24px;
 
-  --section-padding-y: #{fluid(40, 30)};
+  --section-padding-y: #{fluid(60, 30)};
 
   --transition-duration: 0.2s;
 }
