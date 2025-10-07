@@ -13,8 +13,12 @@ export default function Header() {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-  function openMenu() {
+  function toggleMenu() {
     setIsOpenMenu(!isOpenMenu);
+  }
+
+  function closeMenu() {
+    setIsOpenMenu(false);
   }
 
   return (
@@ -22,7 +26,7 @@ export default function Header() {
       <div className="header__inner container">
         <Logo />
         <dialog className="header__overlay-menu-dialog" open={isOpenMenu}>
-          <Logo className="visible-mobile" />
+          <Logo className="visible-tablet" />
           <nav className="header__menu">
             <ul className="header__menu-list">
               {menuItems.map((item, index) => (
@@ -32,7 +36,7 @@ export default function Header() {
                     to={item.path}
                     title={item.label}
                     aria-label={item.label}
-                    onClick={openMenu}
+                    onClick={closeMenu}
                   >
                     {item.label}
                   </NavLink>
@@ -42,10 +46,10 @@ export default function Header() {
           </nav>
         </dialog>
         <BurgerButton
-          className={`header__burger-button visible-mobile ${
+          className={`header__burger-button visible-tablet ${
             isOpenMenu ? "active" : ""
           }`}
-          onClick={openMenu}
+          onClick={toggleMenu}
         />
       </div>
     </header>
