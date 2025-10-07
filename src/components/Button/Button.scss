@@ -8,9 +8,10 @@
   border: none;
   color: var(--color-primary-500);
   text-align: center;
+  max-width: 500px;
 
   &--big {
-      padding: 16px 16px 14px;
+    padding: 16px 16px 14px;
   }
 
   &--inline {
@@ -26,5 +27,13 @@
       position: absolute;
       left: 16px;
     }
+  }
+
+  &--transparent {
+    padding: 5px;
+    width: 34px;
+    height: 34px;
+    background-color: transparent;
+    box-shadow: none;
   }
 }
