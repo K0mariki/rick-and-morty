@@ -1,0 +1,54 @@
+@use "/src/styles/helpers" as *;
+
+.selects-menu {
+  display: contents;
+  width: 100%;
+  gap: 16px 20px;
+
+  &__overlay-menu-dialog {
+    @include tablet {
+      &[open] {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        @include square(100%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border: none;
+        @include flex-center;
+      }
+    }
+
+    @include tablet-above {
+      display: contents;
+    }
+  }
+
+  &__header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+
+  &__inner {
+    @include flex-center;
+    flex-direction: column;
+    padding: 16px;
+    row-gap: 16px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    max-width: 532px;
+    width: 100%;
+
+    @include tablet-above {
+      display: contents;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+}
