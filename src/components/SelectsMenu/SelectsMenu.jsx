@@ -18,7 +18,7 @@ export default function SelectsMenu(props) {
       >
         <div className="selects-menu__inner">
           <header className="selects-menu__header visible-tablet">
-            <p>Filter</p>
+            <p className="h3">Filter</p>
             <Button icon="close.svg" onClick={toggleFilterMenu}/>
           </header>
           {children}
