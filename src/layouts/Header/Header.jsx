@@ -6,7 +6,7 @@ import BurgerButton from "../../components/BurgerButton";
 
 export default function Header() {
   const menuItems = [
-    { label: "Characters", path: "characters" },
+    { label: "Characters", path: "" },
     { label: "Locations", path: "locations" },
     { label: "Episodes", path: "episodes" },
   ];
