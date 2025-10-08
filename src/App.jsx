@@ -23,9 +23,8 @@ function App() {
       path: "/",
       element: <Layout />,
       children: [
-        { index: true, element: <Navigate to="/characters" /> },
         {
-          path: "characters",
+          index: true,
           element: <Characters />,
           loader: fetchCharacters,
           errorElement: <ErrorBoundary />,
