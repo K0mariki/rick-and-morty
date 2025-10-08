@@ -11,7 +11,7 @@ export default function Locations() {
 
   return (
     <>
-      <Hero image="rick-and-morty-portal.png">
+      <Hero image="rickAndMortyPortal">
         <SearchInput></SearchInput>
         <SelectsMenu>
           <Select defaultValue="Type"></Select>

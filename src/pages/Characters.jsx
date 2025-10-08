@@ -10,7 +10,7 @@ export default function Characters() {
   const characters = useLoaderData();
   return (
     <>
-      <Hero image="rick-and-morty-logo.svg">
+      <Hero image="rickAndMortyLogo">
         <SearchInput></SearchInput>
         <SelectsMenu>
           <Select defaultValue="Species"></Select>

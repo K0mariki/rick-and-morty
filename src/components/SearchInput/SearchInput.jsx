@@ -4,7 +4,7 @@ import Icon from "../Icon";
 export default function SearchInput() {
   return (
       <label className="search">
-        <Icon className="search__icon" name="search.svg"/>
+        <Icon className="search__icon" name="search"/>
         <input
           type="text"
           className="search__input"

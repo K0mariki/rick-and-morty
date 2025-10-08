@@ -8,7 +8,7 @@ export default function Episodes() {
   const episodes = useLoaderData();
   return (
     <>
-      <Hero image="rick-and-morty.png">
+      <Hero image="rickAndMorty">
         <SearchInput></SearchInput>
       </Hero>
       <Section title="All episodes on Rick and Morty" hiddenTitle>

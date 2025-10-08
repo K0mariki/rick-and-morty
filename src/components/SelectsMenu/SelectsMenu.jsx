@@ -19,7 +19,7 @@ export default function SelectsMenu(props) {
         <div className="selects-menu__inner">
           <header className="selects-menu__header visible-tablet">
             <p className="h3">Filter</p>
-            <Button icon="close.svg" onClick={toggleFilterMenu}/>
+            <Button icon="close" onClick={toggleFilterMenu}/>
           </header>
           {children}
           <Button
@@ -33,7 +33,7 @@ export default function SelectsMenu(props) {
       </dialog>
       <Button
         className="visible-tablet"
-        icon="filter.svg"
+        icon="filter"
         size="big"
         fullWidth
         onClick={toggleFilterMenu}

@@ -12,7 +12,7 @@ export default function Select(props) {
         <option value="t3">Шапокляк</option>
         <option value="t4">Крыса Лариса</option>
       </select>
-      <Icon className="select__icon" name="arrow-drop-down.svg" />
+      <Icon className="select__icon" name="arrowDropDown" />
     </label>
   );
 }
