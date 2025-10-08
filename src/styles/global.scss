@@ -59,14 +59,7 @@ svg * {
 
 a {
   color: var(--color-black);
-
-  @include hover {
-    color: var(--color-primary-500);
-  }
-
-  &[class] {
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 
 :focus-visible {
