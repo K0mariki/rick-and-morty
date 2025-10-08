@@ -16,7 +16,7 @@ export default function Hero(props) {
   return (
     <section className="hero">
       <div className="hero__inner container">
-        {image && <img src={imageSrc} className="hero__image" alt={image} />}
+        {image && <img src={imageSrc} className="hero__image" alt={image} loading="lazy"/>}
         <div className="hero__grid">{children}</div>
       </div>
     </section>
