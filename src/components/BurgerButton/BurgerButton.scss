@@ -7,7 +7,7 @@
   background-color: transparent;
   border: none;
 
-  &:hover {
+  @include hover {
     & .burger-button__line {
       stroke: var(--color-primary-500);
       transition: var(--transition-duration);
