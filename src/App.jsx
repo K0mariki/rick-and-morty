@@ -1,10 +1,8 @@
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
 import "./styles/index";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { fetchCharacters, fetchEpisodes, fetchLocations } from "./api";
 import Layout from "./layouts/Layout";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Characters from "./pages/Characters";
 import CharacterDetails from "./pages/CharacterDetails";
 import Episodes from "./pages/Episodes";
@@ -12,10 +10,6 @@ import EpisodeDetails from "./pages/EpisodeDetails";
 import Locations from "./pages/Locations";
 import LocationDetails from "./pages/LocationDetails";
 import NotFound from "./pages/NotFound";
-import fetchCharacters from "./api/fetchCharacters";
-import fetchEpisodes from "./api/fetchEpisodes";
-import fetchLocation from "./api/fetchLocation";
-import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const router = createBrowserRouter([
@@ -46,7 +40,7 @@ function App() {
         {
           path: "locations",
           element: <Locations />,
-          loader: fetchLocation,
+          loader: fetchLocations,
           errorElement: <ErrorBoundary />,
         },
         {
