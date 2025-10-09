@@ -1,0 +1,77 @@
+@use "./../../styles/helpers" as *;
+
+.section-details {
+  padding-block: var(--section-padding-y);
+  column-gap: 50px;
+
+  &__header {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &__image {
+    border-radius: 100%;
+
+    @include mobile-above {
+      margin-top: -70px;
+    }
+  }
+
+  &__body {
+    text-align: center;
+
+    &--character {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      align-items: start;
+
+      & .section-details__list {
+        flex-direction: column;
+      }
+
+      & .section-details__item {
+        position: relative;
+        padding-inline: 10px;
+
+        &:has(a)::after {
+          position: absolute;
+          content: "";
+          width: 30px;
+          height: 30px;
+          background-image: url("./../../assets/icons/arrow-right.svg");
+          top: 40%;
+          right: 20px;
+        }
+
+        &-inner {
+          border-bottom: 1px solid black;
+          padding-block: 16px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 25px;
+
+    &-title {
+      color: var(--color-grey);
+      margin-top: 40px;
+    }
+  }
+
+  &__item-subtitle {
+    font-size: 14px;
+    color: var(--color-sub-basic);
+  }
+
+  &__item-date {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+}
