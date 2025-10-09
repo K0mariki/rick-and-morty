@@ -8,13 +8,20 @@ import Button from "../../components/Button";
 
 export default function CardSection(props) {
   const { sectionsData, linkTo, title, hiddenTitle = false } = props;
-  const [characterArr, setCharacterArr] = useState(sectionsData.results);
-  const nextPageUrl = useRef(sectionsData.info.next);
+  const nextPageUrl = useRef(sectionsData?.info?.next);
+
+  const [data, setData] = useState(() => {
+    if (sectionsData["info"]) {
+      return sectionsData.results;
+    } else {
+      return sectionsData;
+    }
+  });
 
   async function loadMore() {
-    const nextPageData = await fetchMore(nextPageUrl.current);
+    const nextPageData = await fetchMore(nextPageUrl?.current);
 
-    setCharacterArr([...characterArr, ...nextPageData.results]);
+    setData([...data, ...nextPageData.results]);
     nextPageUrl.current = nextPageData.info.next;
   }
 
@@ -24,9 +31,9 @@ export default function CardSection(props) {
         {title}
       </h2>
       <ul className="section__cards-list">
-        {characterArr.map((item) => (
+        {data.map((item) => (
           <li key={item.id} className="section__cards-list-item">
-            <Link to={`/${linkTo}/${item.id}`} state={sectionsData}>
+            <Link to={`/${linkTo}/${item.id}`} state={item}>
               {linkTo == "character" ? (
                 <CharacterCard
                   image={item.image}
@@ -45,7 +52,7 @@ export default function CardSection(props) {
           </li>
         ))}
       </ul>
-      {nextPageUrl.current ? (
+      {nextPageUrl?.current ? (
         <Button className="section__button" onClick={loadMore}>
           LOAD MORE
         </Button>
