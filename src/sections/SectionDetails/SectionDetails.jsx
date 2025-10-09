@@ -17,8 +17,8 @@ export default function SectionDetails(props) {
             <div>
               <h2 className="section-details__list-title h3">Informations</h2>
               <ul className="section-details__list">
-                {details.map((detail) => (
-                  <li className="section-details__item">
+                {details.map((detail, index) => (
+                  <li key={index} className="section-details__item">
                     <div className="section-details__item-inner">
                       <p className="section-details__item-title h4">
                         {detail.name}
@@ -34,8 +34,8 @@ export default function SectionDetails(props) {
             <div>
               <h2 className="section-details__list-title h3">Episodes</h2>
               <ul className="section-details__list">
-                {episode.map((item) => (
-                  <li className="section-details__item">
+                {episode.map((item, index) => (
+                  <li key={index} className="section-details__item">
                     <div className="section-details__item-inner">
                       <h3 className="section-details__item-title h4">
                         {item.episode}
@@ -57,8 +57,8 @@ export default function SectionDetails(props) {
         <div className="section-details__body">
           <h1 className="section-details__title">{title}</h1>
           <ul className="section-details__list">
-            {details.map((detail) => (
-              <li className="section-details__item">
+            {details.map((detail, index) => (
+              <li key={index} className="section-details__item">
                 <div className="section-details__item-inner">
                   <p className="section-details__item-title h4">
                     {detail.name}
