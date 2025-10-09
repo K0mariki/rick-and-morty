@@ -18,3 +18,17 @@ export async function getEntitysByIds(entityType = "character", arrIds = [1]) {
     return [data];
   }
 }
+
+export async function getEntitysByName(entityType = "character", name) {
+  const res = await fetch(
+    `https://rickandmortyapi.com/api/${entityType}${
+      name ? `/?name=${name}` : ""
+    }`
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+
+  const data = await res.json();
+  return data;
+}
