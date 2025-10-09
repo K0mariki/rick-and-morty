@@ -11,6 +11,11 @@
   max-width: 500px;
   min-width: 150px;
 
+  @include hover {
+    background-color: var(--color-primary-500);
+    color: var(--color-black);
+  }
+
   &--big {
     padding: 16px 16px 14px;
   }
@@ -39,5 +44,16 @@
     background-color: transparent;
     box-shadow: none;
     min-width: fit-content;
+  }
+
+  &--back {
+    font-family: var(--font-family-second);
+    color: var(--color-black);
+    font-size: 18px;
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-primary-500);
+    }
   }
 }
