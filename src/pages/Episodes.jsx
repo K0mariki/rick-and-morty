@@ -14,11 +14,14 @@ export default function Episodes() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     async function searchLocation() {
       setIsLoading(true);
 
       try {
-        const res = await getEntitysByName("episode", searchInput);
+        const res = await getEntitysByName("episode", searchInput, signal);
         setArr(res);
       } catch (error) {
         console.error("Search failed:", error);
@@ -27,6 +30,10 @@ export default function Episodes() {
       }
     }
     searchLocation();
+
+    return () => {
+      controller.abort();
+    };
   }, [searchInput]);
 
   return (

@@ -19,11 +19,11 @@ export async function getEntitysByIds(entityType = "character", arrIds = [1]) {
   }
 }
 
-export async function getEntitysByName(entityType = "character", name) {
+export async function getEntitysByName(entityType = "character", name, signal) {
   const res = await fetch(
     `https://rickandmortyapi.com/api/${entityType}${
       name ? `/?name=${name}` : ""
-    }`
+    }`, {signal}
   );
   if (!res.ok) {
     throw new Error("Failed to fetch posts");

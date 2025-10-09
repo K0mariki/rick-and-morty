@@ -15,11 +15,13 @@ export default function Locations() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     async function searchLocation() {
       setIsLoading(true);
-
       try {
-        const res = await getEntitysByName("location", searchInput);
+        const res = await getEntitysByName("location", searchInput, signal);
         setArr(res);
       } catch (error) {
         console.error("Search failed:", error);
@@ -28,6 +30,10 @@ export default function Locations() {
       }
     }
     searchLocation();
+
+    return () => {
+      controller.abort();
+    };
   }, [searchInput]);
 
   return (
