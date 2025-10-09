@@ -24,7 +24,7 @@ export default function SectionDetails(props) {
                         {detail.name}
                       </p>
                       <p className="section-details__item-subtitle">
-                        {detail.value}
+                        {detail.value ? detail.value : "-"}
                       </p>
                     </div>
                   </li>
