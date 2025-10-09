@@ -3,6 +3,7 @@ import { getEntitysByIds } from "./../api";
 import { useEffect, useState } from "react";
 import CardSection from "./../sections/CardSection";
 import Loader from "../components/Loader/Loader";
+import SectionDetails from "../sections/SectionDetails/SectionDetails";
 
 export default function LocationDetails() {
   const location = useLocation();
@@ -29,6 +30,13 @@ export default function LocationDetails() {
 
   return (
     <>
+      <SectionDetails
+        title={location.state.name}
+        details={[
+          { name: "Type", value: location.state.type },
+          { name: "Dimension", value: location.state.dimension },
+        ]}
+      />
       {residents.length > 0 || residents["info"] ? (
         <CardSection
           sectionsData={residents}
@@ -38,7 +46,7 @@ export default function LocationDetails() {
       ) : (
         ""
       )}
-      {isLoading && <Loader/>}
+      {isLoading && <Loader />}
     </>
   );
 }

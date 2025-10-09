@@ -2,7 +2,8 @@ import { useLocation } from "react-router-dom";
 import { getEntitysByIds } from "./../api";
 import { useEffect, useState } from "react";
 import CardSection from "./../sections/CardSection";
-import Loader from "../components/Loader/Loader";
+import Loader from "./../components/Loader/Loader";
+import SectionDetails from "../sections/SectionDetails/SectionDetails";
 
 export default function EpisodeDetails() {
   const location = useLocation();
@@ -32,16 +33,19 @@ export default function EpisodeDetails() {
 
   return (
     <>
+      <SectionDetails
+        title={location?.state?.name}
+        details={[
+          { name: "Episode", value: location.state?.episode },
+          { name: "Date", value: location.state?.air_date },
+        ]}
+      />
       {casts.length > 0 || casts["info"] ? (
-        <CardSection
-          sectionsData={casts}
-          linkTo="character"
-          title="Residents"
-        />
+        <CardSection sectionsData={casts} linkTo="character" title="Cast" />
       ) : (
         ""
       )}
-      {isLoading && <Loader/>}
+      {isLoading && <Loader />}
     </>
   );
 }
