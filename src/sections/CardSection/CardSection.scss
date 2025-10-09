@@ -1,9 +1,14 @@
 @use "./../../styles/helpers" as *;
 
-.section {
+.section-card {
   display: flex;
   flex-direction: column;
   padding-block: var(--section-padding-y);
+
+  &__title {
+    color: var(--color-grey);
+    margin-bottom: 24px;
+  }
 
   &__cards-list {
     display: grid;

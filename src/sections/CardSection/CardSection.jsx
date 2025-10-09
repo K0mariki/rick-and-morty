@@ -26,13 +26,13 @@ export default function CardSection(props) {
   }
 
   return (
-    <section className="section container">
-      <h2 className={`section__title ${hiddenTitle ? "visually-hidden" : ""}`}>
+    <section className="section-card container">
+      <h2 className={`section-card__title h3${hiddenTitle ? " visually-hidden" : ""}`}>
         {title}
       </h2>
-      <ul className="section__cards-list">
+      <ul className="section-card__cards-list">
         {data.map((item) => (
-          <li key={item.id} className="section__cards-list-item">
+          <li key={item.id} className="section-card__cards-list-item">
             <Link to={`/${linkTo}/${item.id}`} state={item}>
               {linkTo == "character" ? (
                 <CharacterCard
@@ -53,7 +53,7 @@ export default function CardSection(props) {
         ))}
       </ul>
       {nextPageUrl?.current ? (
-        <Button className="section__button" onClick={loadMore}>
+        <Button className="section-card__button" onClick={loadMore}>
           LOAD MORE
         </Button>
       ) : (
