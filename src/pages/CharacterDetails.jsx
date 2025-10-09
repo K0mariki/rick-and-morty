@@ -28,6 +28,7 @@ export default function CharacterDetails() {
           { name: "Specie", value: location.state.species },
           { name: "Origin", value: location.state.origin.name },
           { name: "Type", value: location.state.type },
+          { name: "Location", value: location.state.location.name },
         ]}
         episode={episode}
       />
