@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import CardSection from "./../sections/CardSection";
 import Loader from "../components/Loader/Loader";
 import SectionDetails from "../sections/SectionDetails/SectionDetails";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 export default function LocationDetails() {
   const location = useLocation();
   const [residents, setResidents] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useDocumentTitle(`${location.state.name} | Rick and Morty`);
 
   useEffect(() => {
     async function getResidents() {

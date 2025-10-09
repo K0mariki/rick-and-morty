@@ -2,11 +2,13 @@ import { useLocation } from "react-router-dom";
 import { getEntitysByIds } from "./../api";
 import SectionDetails from "../sections/SectionDetails";
 import { useEffect, useState } from "react";
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 export default function CharacterDetails() {
   const location = useLocation();
-
   const [episode, setEpisode] = useState([]);
+
+  useDocumentTitle(`${location.state.name} | Rick and Morty`);
 
   useEffect(() => {
     async function getCast() {
