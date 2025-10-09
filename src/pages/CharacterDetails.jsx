@@ -1,17 +1,13 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function CharacterDetails() {
-  const { characterId } = useParams();
-  const characters = useLocation();
-
-  const currentCharacter = characters.state.results.find(
-    (character) => Number(character.id) == Number(characterId)
-  );
+  // const { characterId } = useParams();
+  const character = useLocation();
 
   return (
     <div className="container">
-      <img src={currentCharacter.image} alt="" style={{borderRadius:"100%"}}/>
-      {currentCharacter.name}
+      <img src={character.state.image} alt={character.state.name} style={{borderRadius:"100%"}}/>
+      {character.state.name}
     </div>
   );
 }
