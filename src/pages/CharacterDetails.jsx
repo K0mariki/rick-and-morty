@@ -17,8 +17,6 @@ export default function CharacterDetails() {
     getCast();
   }, []);
 
-  console.log(location);
-
   return (
     <>
       <SectionDetails

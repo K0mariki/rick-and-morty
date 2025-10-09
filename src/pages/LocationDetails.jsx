@@ -19,9 +19,7 @@ export default function LocationDetails() {
           location.state.residents
         );
         setResidents(data);
-      } catch (err) {
-        console.log(err.message);
-      } finally {
+      }  finally {
         setIsLoading(false);
       }
     }

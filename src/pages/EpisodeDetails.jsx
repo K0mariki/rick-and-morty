@@ -10,8 +10,6 @@ export default function EpisodeDetails() {
   const [casts, setCasts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(location);
-
   useEffect(() => {
     async function getCast() {
       setIsLoading(true);
@@ -22,9 +20,7 @@ export default function EpisodeDetails() {
         );
 
         setCasts(data);
-      } catch (err) {
-        console.log(err.message);
-      } finally {
+      }  finally {
         setIsLoading(false);
       }
     }
