@@ -1,12 +1,8 @@
 import "./SectionDetails.scss";
 import BackButton from "../../components/BackButton";
-import Icon from "../../components/Icon";
-import { Link } from "react-router-dom";
 
 export default function SectionDetails(props) {
   const { title, details, episode, image } = props;
-
-  console.log(episode);
 
   return (
     <section className="section-details container">
