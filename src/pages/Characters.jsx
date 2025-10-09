@@ -7,6 +7,7 @@ import SelectsMenu from "../components/SelectsMenu";
 import Select from "../components/Select";
 import Hero from "../sections/Hero";
 import CardSection from "../sections/CardSection";
+import { useDocumentTitle } from "./../utils/useDocumentTitle";
 
 export default function Characters() {
   const locations = useLoaderData();
@@ -14,6 +15,8 @@ export default function Characters() {
   const [searchInput, setSearchInput] = useState("");
   const [arr, setArr] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useDocumentTitle(`Characters | Rick and Morty`);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -40,6 +43,7 @@ export default function Characters() {
 
   return (
     <>
+      <h1 className="visually-hidden">Characters on Rick and Morty</h1>
       <Hero image="rickAndMortyLogo">
         <SearchInput
           searchInput={searchInput}

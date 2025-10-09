@@ -5,6 +5,7 @@ import CardSection from "../sections/CardSection";
 import { getEntitysByName } from "../api";
 import { useEffect, useState } from "react";
 import Loader from "./../components/Loader";
+import { useDocumentTitle } from './../utils/useDocumentTitle';
 
 export default function Episodes() {
   const locations = useLoaderData();
@@ -12,6 +13,8 @@ export default function Episodes() {
   const [searchInput, setSearchInput] = useState("");
   const [arr, setArr] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useDocumentTitle(`Episodes | Rick and Morty`);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -38,6 +41,7 @@ export default function Episodes() {
 
   return (
     <>
+      <h1 className="visually-hidden">Episodes on Rick and Morty</h1>
       <Hero image="rickAndMorty">
         <SearchInput
           searchInput={searchInput}
